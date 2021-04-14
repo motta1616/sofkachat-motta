@@ -101,12 +101,16 @@ function ChatMessage({message}) {
   </div>)
 }
 
-function SignIn() { // para cuando no esta autenticado poder autenticar y abrir sesion
+export function SignIn() { // para cuando no esta autenticado poder autenticar y abrir sesion export = se exporta para acciones de test 
   const signInwithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider(); // Es el provedor que vamos a usar 
     auth.signInWithPopup(provider);
   }
-  return <button onClick = {signInwithGoogle}>Sign in with google</button>
+  return (
+    <div>
+      <p>Bienvenido a sofka</p>
+      <button onClick = {signInwithGoogle}>Sign in with google</button>
+  </div>)
 }
 
 function SignOut() { // para cerrar la sesion 
